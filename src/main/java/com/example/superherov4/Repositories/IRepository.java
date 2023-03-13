@@ -15,14 +15,14 @@ public interface IRepository {
         return null;
     }
 
-    default List<Superhero> getSuperheroALL() {
+    default List<Superhero> getSuperheroAll() {
         return null;
     }
     default List<SuperheroPowerCount> getSuperheroPower(String name) {
         return null;
     }
 
-    default List<SuperheroPowerByName> getSuperPowerByName(String name){
+    default List<SuperheroPowerByName> getSuperheroPowerByName(String name){
         return null;
     }
 
