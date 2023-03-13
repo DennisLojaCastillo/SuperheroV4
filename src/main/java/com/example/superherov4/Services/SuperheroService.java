@@ -17,6 +17,7 @@ public class SuperheroService {
         this.superheroRepository = superheroRepository;
     }
 
+
     public List<Superhero> getSuperheroAll() {
         return superheroRepository.getSuperheroAll();
     }
@@ -36,6 +37,5 @@ public class SuperheroService {
     public List<CitySuperhero> getSuperheroCity(String name) {
         return superheroRepository.getSuperheroCity(name);
     }
-
 
 }

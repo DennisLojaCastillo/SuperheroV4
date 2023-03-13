@@ -7,9 +7,8 @@ import com.example.superherov4.Model.Superhero;
 import com.example.superherov4.Model.SuperheroPowerCount;
 
 import java.util.List;
-import java.util.SimpleTimeZone;
 
-public interface IRepository {
+public interface ISuperheroRepository {
 
     default Superhero getSuperhero(String name) {
         return null;

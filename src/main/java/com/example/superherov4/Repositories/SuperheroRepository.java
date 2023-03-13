@@ -4,19 +4,24 @@ import com.example.superherov4.DTO.CitySuperhero;
 import com.example.superherov4.DTO.SuperheroPowerByName;
 import com.example.superherov4.Model.Superhero;
 import com.example.superherov4.Model.SuperheroPowerCount;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Repository;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-@Repository
-public class SuperheroRepository implements IRepository{
-    private final String db_url = "jdbc:mysql://localhost:3306/superheroes";
+@Repository ("Superhero_DB")
+public class SuperheroRepository implements ISuperheroRepository {
 
-    private final String uid = "root";
+    @Value("${spring.datasource.url}")
+    private  String db_url;
 
-    private final String pwd = "root";
+    @Value("${spring.datasource.username}")
+    private  String uid;
+
+    @Value("${spring.datasource.password}")
+    private  String pwd;
 
     public List<Superhero> getSuperheroAll() {
         List<Superhero> superheroes = new ArrayList<>();
@@ -40,6 +45,7 @@ public class SuperheroRepository implements IRepository{
             throw new RuntimeException(e);
         }
     }
+
 
     public Superhero getSuperhero(String name) {
         Superhero superhero1 = null;
